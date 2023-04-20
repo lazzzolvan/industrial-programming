@@ -30,11 +30,9 @@ public class Main {
                 mark[i] = in.nextInt();
             }
         }
-        creditBook.session.add(term,durationSession,nameCredit,statusCredit,nameExam,mark);
+        CreditBook.Session pox = new CreditBook.Session(term,durationSession,nameCredit,statusCredit,nameExam,mark);
+        creditBook.session.add(pox);
         CreditBook creditBook1 = new CreditBook(111,3,new CreditBook.Student("Лазарев","Илья","Сергеевич",19));
-        for (int i=0;i<creditBook.quantitySession;i++){
-            creditBook.setSession();
-        }
         creditBook.displayInfo(creditBook);
         creditBook.displayInfo(creditBook1);
     }
