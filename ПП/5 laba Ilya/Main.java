@@ -1,8 +1,6 @@
 package Lab5;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,12 +8,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         List<MedicinalPreparations> arrayMedicinalPreparations = new ArrayList<>();
-        arrayMedicinalPreparations.add(new MedicinalPreparations("Таблетка Ацц", 5, "Разрешено"));
-        arrayMedicinalPreparations.add(new MedicinalPreparations("Лекарство Нормакс", 6, "Запрещено"));
-        arrayMedicinalPreparations.add(new MedicinalPreparations("Мазь Ренацен", 4, "По рецепту"));
-        arrayMedicinalPreparations.add(new MedicinalPreparations("Раствор Зеленка", 2, "Разрешено"));
-        arrayMedicinalPreparations.add(new MedicinalPreparations("Таблетка Грамедин", 8, "Запрещено"));
-        MedicinalPreparations substance = new MedicinalPreparations();
+        MedicinalPreparationsManager medicinalPreparationsManager = new MedicinalPreparationsManager();
+        medicinalPreparationsManager.tablets.add(new Tablet("Таблетка Ацц", 5, Status.Allowed));
+        medicinalPreparationsManager.medicines.add(new Medicine("Лекарство Нормакс", 6, Status.Forbidden));
+        medicinalPreparationsManager.ointments.add(new Ointment("Мазь Ренацен", 4, Status.On_PreScription));
+        medicinalPreparationsManager.solutions.add(new Solution("Раствор Зеленка", 2, Status.Allowed));
+        medicinalPreparationsManager. tablets.add(new Tablet("Таблетка Грамедин", 8, Status.Forbidden));
+       // MedicinalPreparations substance = new MedicinalPreparations();
         int endOfCycle = 0;
         while (endOfCycle == 0) {
             System.out.println("Меню");
@@ -28,9 +27,29 @@ public class Main {
             int choice = in.nextInt();
             switch (choice) {
                 case 1:
-                    arrayMedicinalPreparations.add(substance.addMedicinalPreparations());
+                    printMenu();
+                    int command = in.nextInt();
+                    switch (command){
+                        case 1:
+                            medicinalPreparationsManager.tablets.add(medicinalPreparationsManager.addTablet());
+                            break;
+                        case 2:
+                            medicinalPreparationsManager.medicines.add(medicinalPreparationsManager.addMedicine());
+                            break;
+                        case 3:
+                            medicinalPreparationsManager.ointments.add(medicinalPreparationsManager.addOintment());
+                            break;
+                        case 4:
+                            medicinalPreparationsManager.solutions.add(medicinalPreparationsManager.addSolution());
+                            break;
+                        default:
+                            System.out.println("Введено некорректное значение");
+                            break;
+                    }
                     break;
                 case 2:
+                    printMenu();
+                    command = in.nextInt();
                     int Dosage = 0;
                     substance = substance.choiseMedicinalPreparations(arrayMedicinalPreparations);
                     Dosage = Dosage = substance.calculateDosage(substance);
@@ -85,6 +104,14 @@ public class Main {
     }
     public static void mixSolution (MedicinalPreparations substance){
         System.out.println("Был размешан  "+substance.name);
+    }
+
+    public static void printMenu () {
+        System.out.println("Выберете препарат:");
+        System.out.println("1 - Таблетка");
+        System.out.println("2 - Лекарство");
+        System.out.println("3 - Мазт");
+        System.out.println("4 - Расствор");
     }
 
 }

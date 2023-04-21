@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c615aa51-2d9f-41b4-9e82-1426089abd7c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../5 laba Ilya/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../5 laba Ilya/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../5 laba Ilya/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../5 laba Ilya/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../5 laba Ilya/Lab5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../5 laba Ilya/MedicinalPreparations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../5 laba Ilya/Medicine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../5 laba Ilya/Ointment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../5 laba Ilya/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../5 laba Ilya/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../5 laba Ilya/Tablet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5/MedicinalPreparations.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5/MedicinalPreparations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5/Opportunities.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5/Opportunities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../5 laba Ilya/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MedicinalPreparations.java" beforeDir="false" afterPath="$PROJECT_DIR$/../5 laba Ilya/MedicinalPreparationsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Opportunities.java" beforeDir="false" afterPath="$PROJECT_DIR$/../5 laba Ilya/Opportunities.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Oi2T4qbLY4riYAhtOiqhWfh7kJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/важное/gadik/4 семестр/домашки с серегой/industrial-programming"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c615aa51-2d9f-41b4-9e82-1426089abd7c" name="Changes" comment="" />
+      <created>1682029085634</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682029085634</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

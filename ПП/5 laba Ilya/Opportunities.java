@@ -3,7 +3,7 @@ package Lab5;
 import java.util.List;
 
 interface  Opportunities {
-    MedicinalPreparations addMedicinalPreparations();
+    MedicinalPreparations addTablet();
     int calculateDosage(MedicinalPreparations substance);
     MedicinalPreparations changeStatus(MedicinalPreparations substance);
     MedicinalPreparations changeInformation(MedicinalPreparations substance);

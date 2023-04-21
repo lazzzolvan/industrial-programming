@@ -1,4 +1,4 @@
-package Lab5;
+package Lab5.Lab5;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

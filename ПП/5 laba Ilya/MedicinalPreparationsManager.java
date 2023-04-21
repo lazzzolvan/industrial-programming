@@ -1,26 +1,18 @@
 package Lab5;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class MedicinalPreparations implements Opportunities {
-    String name;
-    int concentration;
-    String statusSubstance;
-
-    MedicinalPreparations() {
-    }
-
-    MedicinalPreparations(String name, int concentration, String statusSubstance) {
-        this.name = name;
-        this.concentration = concentration;
-        this.statusSubstance = statusSubstance;
-    }
-
+public class MedicinalPreparationsManager implements Opportunities {
+    ArrayList<Tablet> tablets = new ArrayList<>();
+    ArrayList<Medicine> medicines = new ArrayList<>();
+    ArrayList<Ointment> ointments = new ArrayList<>();
+    ArrayList<Solution> solutions = new ArrayList<>();
     @Override
-    public MedicinalPreparations addMedicinalPreparations() {
+    public  Tablet addTablet() {
         Scanner in = new Scanner(System.in);
-        MedicinalPreparations substance = new MedicinalPreparations();
+        Tablet substance = new Tablet();
         System.out.println("Введите название вещества ");
         substance.name = in.next();
         System.out.println("Введите концентрацию вещества ");
@@ -32,13 +24,103 @@ public class MedicinalPreparations implements Opportunities {
         int choice = in.nextInt();
         switch (choice) {
             case 1:
-                substance.statusSubstance = "Запрещено";
+                substance.statusSubstance = Status.Forbidden;
                 break;
             case 2:
-                substance.statusSubstance = "По рецепту";
+                substance.statusSubstance = Status.On_PreScription;
                 break;
             case 3:
-                substance.statusSubstance = "Разрешено";
+                substance.statusSubstance = Status.Allowed;
+                break;
+            default:
+                System.out.println("Введено некорректное значение");
+                break;
+        }
+        return substance;
+    }
+
+    @Override
+    public  Medicine addMedicine() {
+        Scanner in = new Scanner(System.in);
+        Medicine substance = new Medicine();
+        System.out.println("Введите название вещества ");
+        substance.name = in.next();
+        System.out.println("Введите концентрацию вещества ");
+        substance.concentration = in.nextInt();
+        System.out.println("Выберете статус вещества ");
+        System.out.println("1:Запрещено ");
+        System.out.println("2:По рецепту ");
+        System.out.println("3:Разрешено ");
+        int choice = in.nextInt();
+        switch (choice) {
+            case 1:
+                substance.statusSubstance = Status.Forbidden;
+                break;
+            case 2:
+                substance.statusSubstance = Status.On_PreScription;
+                break;
+            case 3:
+                substance.statusSubstance = Status.Allowed;
+                break;
+            default:
+                System.out.println("Введено некорректное значение");
+                break;
+        }
+        return substance;
+    }
+
+    @Override
+    public  Ointment addOintment() {
+        Scanner in = new Scanner(System.in);
+        Ointment substance = new Ointment();
+        System.out.println("Введите название вещества ");
+        substance.name = in.next();
+        System.out.println("Введите концентрацию вещества ");
+        substance.concentration = in.nextInt();
+        System.out.println("Выберете статус вещества ");
+        System.out.println("1:Запрещено ");
+        System.out.println("2:По рецепту ");
+        System.out.println("3:Разрешено ");
+        int choice = in.nextInt();
+        switch (choice) {
+            case 1:
+                substance.statusSubstance = Status.Forbidden;
+                break;
+            case 2:
+                substance.statusSubstance = Status.On_PreScription;
+                break;
+            case 3:
+                substance.statusSubstance = Status.Allowed;
+                break;
+            default:
+                System.out.println("Введено некорректное значение");
+                break;
+        }
+        return substance;
+    }
+
+    @Override
+    public  Solution addSolution() {
+        Scanner in = new Scanner(System.in);
+        Solution     substance = new Solution();
+        System.out.println("Введите название вещества ");
+        substance.name = in.next();
+        System.out.println("Введите концентрацию вещества ");
+        substance.concentration = in.nextInt();
+        System.out.println("Выберете статус вещества ");
+        System.out.println("1:Запрещено ");
+        System.out.println("2:По рецепту ");
+        System.out.println("3:Разрешено ");
+        int choice = in.nextInt();
+        switch (choice) {
+            case 1:
+                substance.statusSubstance = Status.Forbidden;
+                break;
+            case 2:
+                substance.statusSubstance = Status.On_PreScription;
+                break;
+            case 3:
+                substance.statusSubstance = Status.Allowed;
                 break;
             default:
                 System.out.println("Введено некорректное значение");
@@ -69,11 +151,11 @@ public class MedicinalPreparations implements Opportunities {
             choice = in.nextInt();
             switch (choice) {
                 case 1:
-                    substance.statusSubstance = "По рецепту";
+                    substance.statusSubstance = Status.On_PreScription;
                     endChange = 1;
                     break;
                 case 2:
-                    substance.statusSubstance = "Разрешено";
+                    substance.statusSubstance = Status.Allowed;
                     endChange = 1;
                     break;
                 default:
@@ -87,11 +169,11 @@ public class MedicinalPreparations implements Opportunities {
             choice = in.nextInt();
             switch (choice) {
                 case 1:
-                    substance.statusSubstance = "Запрещено";
+                    substance.statusSubstance = Status.Forbidden;
                     endChange = 1;
                     break;
                 case 2:
-                    substance.statusSubstance = "Разрешено";
+                    substance.statusSubstance = Status.Allowed;
                     endChange = 1;
                     break;
                 default:
@@ -105,11 +187,11 @@ public class MedicinalPreparations implements Opportunities {
             choice = in.nextInt();
             switch (choice) {
                 case 1:
-                    substance.statusSubstance = "По рецепту";
+                    substance.statusSubstance = Status.On_PreScription;
                     endChange = 1;
                     break;
                 case 2:
-                    substance.statusSubstance = "Запрещено";
+                    substance.statusSubstance = Status.Forbidden;
                     endChange = 1;
                     break;
                 default:
