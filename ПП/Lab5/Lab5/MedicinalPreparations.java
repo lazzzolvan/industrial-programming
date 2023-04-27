@@ -1,6 +1,7 @@
-package Lab5;
+package Lab5.Lab5;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class MedicinalPreparations implements Opportunities {
     String name;
@@ -81,23 +82,23 @@ public class MedicinalPreparations implements Opportunities {
         System.out.println("Статсу вещества: " + substance.statusSubstance);
     }
     @Override
-    public void setAllMedicinalsPreparationOnNumbers(List<Opportunities> substance) {
+    public void setAllMedicinalsPreparationOnNumbers(List<MedicinalPreparations> substance) {
         int i = 1;
         System.out.println("===============================");
-        for (Opportunities strArr : substance) {
+        for (MedicinalPreparations strArr : substance) {
             System.out.println(i + " -  Медецинский препарарат");
-            strArr.toString((MedicinalPreparations) strArr);
+            strArr.toString(strArr);
             i += 1;
         }
         System.out.println("===============================");
         System.out.println();
     }
     @Override
-    public MedicinalPreparations choiseMedicinalPreparations(List<Opportunities> arrayMedicinalPreparations,int numberPreparation,MedicinalPreparations rightSubstance) {
+    public MedicinalPreparations choiseMedicinalPreparations(List<MedicinalPreparations> arrayMedicinalPreparations,int numberPreparation,MedicinalPreparations rightSubstance) {
         int i = 1;
-        for (Opportunities substance : arrayMedicinalPreparations) {
+        for (MedicinalPreparations substance : arrayMedicinalPreparations) {
             if (i == numberPreparation) {
-                rightSubstance = (MedicinalPreparations) substance;
+                rightSubstance = substance;
             }
             i++;
         }

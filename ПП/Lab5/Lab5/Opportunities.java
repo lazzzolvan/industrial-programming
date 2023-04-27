@@ -1,4 +1,4 @@
-package Lab5;
+package Lab5.Lab5;
 
 import java.util.List;
 
@@ -8,6 +8,6 @@ interface  Opportunities {
     MedicinalPreparations changeStatus(MedicinalPreparations substance,int choice);
     MedicinalPreparations changeInformation(MedicinalPreparations substance,String name,int concentration,int statusSubstance);
     void toString(MedicinalPreparations substance);
-    void setAllMedicinalsPreparationOnNumbers(List<Opportunities> substance);
-    MedicinalPreparations choiseMedicinalPreparations(List<Opportunities> arrayMedicinalPreparations,int numberPreparation,MedicinalPreparations rightSubstance);
+    void setAllMedicinalsPreparationOnNumbers(List<MedicinalPreparations> substance);
+    MedicinalPreparations choiseMedicinalPreparations(List<MedicinalPreparations> arrayMedicinalPreparations,int numberPreparation,MedicinalPreparations rightSubstance);
 }
