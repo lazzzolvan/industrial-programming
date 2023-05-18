@@ -15,34 +15,35 @@ public class Main {
             while ((line = reader.readLine()) != null) {
                 try {
                     String[] s = line.split(" ");
+                    String[] str = s[1].split("_");
                     double number = 0;
-                    if (s[1].equals("US")) {
-                        NumberFormat nf = NumberFormat.getInstance(new Locale("en", "US"));
+                    if (str[1].equals("US")) {
+                        NumberFormat nf = NumberFormat.getInstance(new Locale(str[0], str[1]));
                         if (s[0].matches("^[0-9]+(\\.[0-9]+)?$")) {
                             number = nf.parse(s[0].trim()).doubleValue();
                         } else {
-                            throw new NumberFormatException();
+                            throw new InvalidNumberException("Ошибка локали!");
                         }
-                    } else if (s[1].equals("UK")) {
-                        NumberFormat nf = NumberFormat.getInstance(new Locale("en", "UK"));
+                    } else if (str[1].equals("UK")) {
+                        NumberFormat nf = NumberFormat.getInstance(new Locale(str[0], str[1]));
                         if (s[0].matches("^\\d+.+\\d+(,[0-9]+)?$")) {
                             number = nf.parse(s[0].trim()).doubleValue();
                         }else{
-                            throw new NumberFormatException();
+                            throw new InvalidNumberException("Ошибка локали!");
                         }
-                    } else if (s[1].equals("IN")) {
-                        NumberFormat nf = NumberFormat.getInstance(new Locale("en", "IN"));
+                    } else if (str[1].equals("IN")) {
+                        NumberFormat nf = NumberFormat.getInstance(new Locale(str[0], str[1]));
                         if (s[0].matches("^\\d+,+\\d+,+\\d+(.[0-9]+)?$")) {
                             number = nf.parse(s[0].trim()).doubleValue();
                         }else{
-                            throw new NumberFormatException();
+                            throw new InvalidNumberException("Ошибка локали!");
                         }
-                    } else if (s[1].equals("RU")) {
-                        NumberFormat nf = NumberFormat.getInstance(new Locale("ru", "RU"));
+                    } else if (str[1].equals("RU")) {
+                        NumberFormat nf = NumberFormat.getInstance(new Locale(str[0], str[1]));
                         if (s[0].matches("^[0-9]+(\\,[0-9]+)?$"))                       {
                             number = nf.parse(s[0].trim()).doubleValue();
                         }else {
-                            throw new NumberFormatException();
+                            throw new InvalidNumberException("Ошибка локали!");
                         }
                     } else {
                         throw new InvalidNumberException("Ошибка локали!");
@@ -56,8 +57,9 @@ public class Main {
                     e.printStackTrace();
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignore) {
+           // e.printStackTrace();
+            throw new InvalidNumberException("Ошибка считывания файла");
         } catch (OutOfMemoryError error) {
             error.printStackTrace();
         }
