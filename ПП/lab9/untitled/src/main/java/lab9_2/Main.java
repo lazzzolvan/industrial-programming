@@ -36,6 +36,25 @@ public class Main {
                 printRibs(graph);
             }
         }
+
+        /*    int[][] matrix = new int[countVertex][countVertex];
+        for (Rib rib : graph.getRibs()) {
+            matrix[rib.getVertex1()-1][rib.getVertex2()-1] = 1;
+            matrix[rib.getVertex2()-1][rib.getVertex1()-1] = 1;
+        }
+        int countPath = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 1) {
+                    for (int k = 0; k < matrix[j].length; k++) {
+                        if (k == 1)
+                            continue;
+
+                    }
+                }
+            }
+        }*/
+
     }
     public static void printMenu() {
         System.out.println("Выберите что хотите сделать с графом:");

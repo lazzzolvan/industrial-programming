@@ -7,9 +7,13 @@ public class Graph {
     private Set<Rib> ribs;
     private int countRibs = 1;
 
+    public void setRibs(Set<Rib> ribs) {
+        this.ribs = ribs;
+    }
+
     public Graph(int countVertexes) {
         this.countVertexes = countVertexes;
-        ribs = new HashSet<>();
+        ribs = new LinkedHashSet<>();
     }
 
     public int getCountVertexes() {
