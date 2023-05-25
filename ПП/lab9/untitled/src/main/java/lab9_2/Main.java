@@ -1,8 +1,6 @@
 package lab9_2;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,10 +24,13 @@ public class Main {
                 graph.addRib(vertex1, vertex2);
             }
             if (command == 2) {
-                System.out.println("Введите номер ребра который хотите удалить:");
-                int numberRib = scanner.nextInt();
+                System.out.println("Введите вершины, которые вы хотите соединить ребром");
+                System.out.println("Вершина 1:");
+                int vertex1 = scanner.nextInt();
+                System.out.println("Вершина 2:");
+                int vertex2 = scanner.nextInt();
 
-                graph.removeRib(numberRib);
+                graph.removeRib(vertex1,vertex2);
             }
             if (command == 3) {
                 printRibs(graph);
@@ -45,9 +46,11 @@ public class Main {
     }
 
     public static void printRibs(Graph graph) {
-        Map<Integer, Vertex> ribs = new HashMap<>(graph.getRibs());
-        for (Map.Entry<Integer, Vertex> integerVertexEntry : ribs.entrySet()) {
-            System.out.println("Ребро с номер " + integerVertexEntry.getKey() + " связывает вершины " + integerVertexEntry.getValue().getVertex1() + " и " + integerVertexEntry.getValue().getVertex2());
+        Set<Rib> ribs = new HashSet<>(graph.getRibs());
+        int count = 0;
+        for (Rib rib : ribs){
+            System.out.println("Ребро с номер " + (count+1) + " связывает вершины " + rib.getVertex1() + " и " + rib.getVertex2());
+            count++;
         }
     }
 }

@@ -1,17 +1,15 @@
 package lab9_2;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class Graph {
     private int countVertexes;
-    private Map<Integer, Vertex> ribs;
+    private Set<Rib> ribs;
     private int countRibs = 1;
 
     public Graph(int countVertexes) {
         this.countVertexes = countVertexes;
-        ribs = new HashMap<>();
+        ribs = new HashSet<>();
     }
 
     public int getCountVertexes() {
@@ -19,22 +17,18 @@ public class Graph {
     }
 
     public void addRib (int vertex1, int vertex2) {
-        Vertex vertex = new Vertex(vertex1, vertex2);
-        if (ribs.containsValue(new Vertex(vertex1, vertex2)) || ribs.containsValue(new Vertex(vertex2, vertex1)))
-            return;
+        Rib rib = new Rib(vertex1, vertex2);
         if (vertex1 == vertex2)
             System.out.println("Одну и ту же вершину нельзя соединить ребром");
-        ribs.put(countRibs, vertex);
+        ribs.add(rib);
         countRibs++;
     }
 
-    public void removeRib (int numberRib) {
-        if (!ribs.containsKey(numberRib))
-            return;
-        ribs.remove(numberRib, ribs.get(numberRib));
+    public void removeRib (int vertex1, int vertex2) {
+        ribs.remove(new Rib(vertex1, vertex2));
     }
 
-    public Map<Integer, Vertex> getRibs() {
+    public Set<Rib> getRibs() {
         return ribs;
     }
 

@@ -2,16 +2,16 @@ package lab9_2;
 
 import java.util.Objects;
 
-public class Vertex {
+public class Rib {
     private int vertex1;
     private int vertex2;
 
-    public Vertex(int vertex1, int vertex2) {
+    public Rib(int vertex1, int vertex2) {
         this.vertex1 = vertex1;
         this.vertex2 = vertex2;
     }
 
-    public Vertex() {
+    public Rib() {
     }
 
     public int getVertex1() {
@@ -34,8 +34,8 @@ public class Vertex {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Vertex vertex = (Vertex) o;
-        return vertex1 == vertex.vertex1 && vertex2 == vertex.vertex2;
+        Rib rib = (Rib) o;
+        return vertex1 == rib.vertex1 && vertex2 == rib.vertex2;
     }
 
     @Override

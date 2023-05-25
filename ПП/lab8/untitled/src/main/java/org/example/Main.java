@@ -17,28 +17,31 @@ public class Main {
                     String[] s = line.split(" ");
                     String[] str = s[1].split("_");
                     double number = 0;
-                    if (str[1].equals("US")) {
+                    if (str.length == 1) {
+                        throw new InvalidNumberException("Ошибка локали!");
+                    }
+                    if (str[0].equals("en") && str[1].equals("US")) {
                         NumberFormat nf = NumberFormat.getInstance(new Locale(str[0], str[1]));
                         if (s[0].matches("^[0-9]+(\\.[0-9]+)?$")) {
                             number = nf.parse(s[0].trim()).doubleValue();
                         } else {
                             throw new InvalidNumberException("Ошибка локали!");
                         }
-                    } else if (str[1].equals("UK")) {
+                    } else if (str[0].equals("en") && str[1].equals("UK")) {
                         NumberFormat nf = NumberFormat.getInstance(new Locale(str[0], str[1]));
                         if (s[0].matches("^\\d+.+\\d+(,[0-9]+)?$")) {
                             number = nf.parse(s[0].trim()).doubleValue();
                         }else{
                             throw new InvalidNumberException("Ошибка локали!");
                         }
-                    } else if (str[1].equals("IN")) {
+                    } else if (str[0].equals("in") && str[1].equals("IN")) {
                         NumberFormat nf = NumberFormat.getInstance(new Locale(str[0], str[1]));
                         if (s[0].matches("^\\d+,+\\d+,+\\d+(.[0-9]+)?$")) {
                             number = nf.parse(s[0].trim()).doubleValue();
                         }else{
                             throw new InvalidNumberException("Ошибка локали!");
                         }
-                    } else if (str[1].equals("RU")) {
+                    } else if (str[0].equals("ru") && str[1].equals("RU")) {
                         NumberFormat nf = NumberFormat.getInstance(new Locale(str[0], str[1]));
                         if (s[0].matches("^[0-9]+(\\,[0-9]+)?$"))                       {
                             number = nf.parse(s[0].trim()).doubleValue();
@@ -52,7 +55,8 @@ public class Main {
                 } catch (ParseException e) {
                     throw new RuntimeException(e);
                 } catch (InvalidNumberException e) {
-                    e.printStackTrace();
+//                    e.printStackTrace();
+                    System.out.println("Error: " + e.getMessage());
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
                 }
@@ -87,7 +91,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String filename = "D:\\важное\\gadik\\4 семестр\\ПП\\industrial-programming\\ПП\\lab8\\untitled\\src\\main\\resources\\number.txt";
+        String filename = "D:\\чики пики\\gadik\\Промышленное программирование\\industrial-programming\\ПП\\lab8\\untitled\\src\\main\\resources\\number.txt";
         try {
             List<Double> numbers = readNumbers(filename);
             System.out.println("Числа: " + numbers);
