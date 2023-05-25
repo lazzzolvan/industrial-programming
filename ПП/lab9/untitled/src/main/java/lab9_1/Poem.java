@@ -6,9 +6,19 @@ import java.util.List;
 
 public class Poem {
     List<String> poem;
+    int averageLength;
 
     public Poem(String s) {
         this.poem = new ArrayList<String>(Arrays.asList(s.split("\n")));
+        this.averageLength = findAverageLength(poem);
+    }
+
+    public int getAverageLength() {
+        return averageLength;
+    }
+
+    public void setAverageLength(int averageLength) {
+        this.averageLength = averageLength;
     }
 
     public List<String> getPoem() {
@@ -19,11 +29,6 @@ public class Poem {
         this.poem = poem;
     }
 
-/*    public  List<String> addList(String s) {
-        List<String> poemList = new ArrayList<String>(Arrays.asList(s.split("\n")));
-        setPoem(poemList);
-        return poemList;
-    }*/
 
     public void printPoem (Poem poem) {
         for (String s : poem.getPoem()) {
@@ -32,12 +37,14 @@ public class Poem {
         System.out.println();
     }
 
-    public static int findMinLength(Poem poem) {
-        int minLength = -1;
-        for (String s : poem.getPoem()) {
-            if (minLength > s.length())
-                minLength = s.length();
+    public int findAverageLength(List<String> poem) {
+        int currentLength = 0;
+        int countLines = 0;
+
+        for (String s : poem) {
+            currentLength += s.length();
+            countLines++;
         }
-        return minLength;
+        return currentLength / countLines;
     }
 }
